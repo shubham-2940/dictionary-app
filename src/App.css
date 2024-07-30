@@ -1,0 +1,63 @@
+/* App.css */
+
+body {
+  background-image: url(`${process.env.PUBLIC_URL}/assets/istockphoto-522878692-612x612.jpg`);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.final {
+  margin-top: 40px;
+}
+.heading {
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  background-color: #a50034; /* Background color for the heading */
+  padding: 5px 0;
+  border-radius: 10px;
+  width: 20%;
+  margin: 20px auto;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.result {
+  margin-left: 28%;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 700px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.d-flex {
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.form-control {
+  max-width: 350px;
+}
+
+.container {
+  background-color: rgb(196, 198, 200);
+  border-radius: 15px;
+}
