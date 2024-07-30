@@ -1,7 +1,8 @@
 import { useState } from "react";
-import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Search from "./components/Search";
 import Result from "./components/Result";
+import backgroundImage from "./assets/istockphoto-522878692-612x612.jpg"; 
 
 function App() {
   const [search, setSearch] = useState("");
@@ -33,18 +34,27 @@ function App() {
   };
 
   return (
-    <div className="all">
-      <div className="final">
-        <span className="heading">Dictionary App</span>
+    <div
+      className="container-fluid p-3"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+      }}
+    >
+      <div className="text-center mt-5">
+        <span className="bg-danger text-white py-2 px-3 rounded">Dictionary App</span>
       </div>
-      <div>
+      <div className="d-flex justify-content-center mt-4">
         <Search
           searchData={search}
           searchHandler={changeSearch}
           searchMeaning={searchMeaningHandler}
         />
       </div>
-      <div className="result">
+      <div className="mt-4">
         <Result meaningData={meaning} />
       </div>
     </div>

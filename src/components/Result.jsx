@@ -1,9 +1,16 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Result({ meaningData }) {
   // Check if meaningData is an array and not empty
   if (!Array.isArray(meaningData) || meaningData.length === 0) {
-    return <h3 className="last-text">Please Enter the word to see meaning</h3>;
+    return(
+      <div className="container text-center mt-5" style={{ maxWidth: '600px' }}>
+        <h3 className="bg-light text-dark py-3 px-4 rounded">
+          Please enter a word to see meaning
+        </h3>
+      </div>
+    );
   }
 
   // Extract the first element (since dictionaryapi.dev returns an array of meanings)
@@ -27,12 +34,12 @@ export default function Result({ meaningData }) {
   // const synonyms = nounMeanings[0].synonyms;
 
   return (
-    <div className="container mt-5 p-3">
+    <div className="container mt-5 p-4 bg-light rounded shadow" style={{ maxWidth: '600px' }}>
       {firstMeaning.word ? (
         <>
-          <h3 className="word-def">Word : {firstMeaning.word}</h3>
+          <h3 className="text-primary">Word : {firstMeaning.word}</h3>
           {meaningsToDisplay.map((meaningDetail, index) => (
-            <div key={index}>
+            <div key={index} className="mb-3">
               <h4 className="partOfSpeech">Part of speech : {meaningDetail.partOfSpeech}</h4>
               {meaningDetail.definitions &&
               meaningDetail.definitions.length > 0 ? (
@@ -56,7 +63,7 @@ export default function Result({ meaningData }) {
           ))}
         </>
       ) : (
-        <h3 className="text-center">Please Enter the word to see meaning</h3>
+        <h3 className="text-center text-muted">Please Enter the word to see meaning</h3>
       )}
     </div>
   );
